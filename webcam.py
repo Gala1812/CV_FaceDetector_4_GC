@@ -1,6 +1,5 @@
 #
 import cv2
-import matplotlib.pyplot as plt
 import uuid   # Universally Unique Identifier
 from dotenv import load_dotenv
 import os
