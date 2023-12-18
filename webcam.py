@@ -25,14 +25,14 @@ while True:
     frame = resized_frame[50:50 + 218, 120:120 + 178, :]
 
     #Collect positives
-    if cv2.waitKey(1) & 0XFF == ord('p'):
+    if cv2.waitKey(1) & 0XFF  == ord('p'):
         # Create the unique file path
         positive = os.getenv('Pos_Path')
         positive_name = os.path.join(positive, '{}.jpg'.format(str(uuid.uuid1())))
         cv2.imwrite(positive_name, frame)
 
     #Collect anchors
-    if cv2.waitKey(1) == ord('a'):
+    if cv2.waitKey(1) & 0XFF == ord('a'):
         # Create the unique file path
         anchor = os.getenv('Anc_Path')
         anchor_name = os.path.join(anchor, '{}.jpg'.format(str(uuid.uuid1())))
@@ -42,7 +42,7 @@ while True:
     cv2.imshow('Collection Image', frame)
 
     # Press 'q' to exit the program
-    if cv2.waitKey(1) == ord('q'):
+    if cv2.waitKey(1) & 0XFF == ord('q'):
         break
 
 cap.release()
